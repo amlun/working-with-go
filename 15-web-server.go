@@ -21,7 +21,7 @@ func main() {
 	// associate URLs requested to functions that handle requests
 	http.HandleFunc("/hello", helloRequest)
 	http.HandleFunc("/", getRequest)
-
+	http.HandleFunc("/status", statusRequest)
 	// start web server
 	log.Println("Listening on http://localhost:9999/")
 	log.Fatal(http.ListenAndServe(":9999", nil))
@@ -40,5 +40,13 @@ func helloRequest(w http.ResponseWriter, r *http.Request) {
 func getRequest(w http.ResponseWriter, r *http.Request) {
 	file_requested := "./" + r.URL.Path
 	http.ServeFile(w, r, file_requested)
+	return
+}
+
+func statusRequest(w http.ResponseWriter, r *http.Request) {
+	ua := r.UserAgent()
+	ip := r.RemoteAddr
+	log.Printf("Request from %s, User-Agent is %s", ip, ua)
+	fmt.Fprint(w, ua)
 	return
 }

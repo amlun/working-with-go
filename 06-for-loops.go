@@ -6,7 +6,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 
@@ -43,9 +46,10 @@ func main() {
 		x++
 	}
 
-	// infinite loop
-	// for {
-	//   fmt.Print(".")
-	// }
+	//infinite loop
+	//for {
+	//	fmt.Println(".")
+	//	time.Sleep(1000)
+	//}
 
 }

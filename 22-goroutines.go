@@ -20,14 +20,14 @@ func main() {
 
 	// This is a normal function call.
 	// Main() will finish this off before continuing.
-	printSlowly("directly functioning", 3)
+	// printSlowly("directly functioning", 3)
 
 	// The go functions below will each spin off to happen each in their own thread,
 	// Meaning they'll be called _concurrently_.
 
 	// Calling the named function as a go routine.
-	go printSlowly("red fish goroutine", 3)
-	go printSlowly("blue fish goroutine", 3)
+	go printSlowly("red fish goroutine", 10)
+	go printSlowly("blue fish goroutine", 10)
 
 	// Call an anonymous function as a go routine.
 	go func(ss string, nn int) {
@@ -35,7 +35,7 @@ func main() {
 			fmt.Println(i, ss)
 			time.Sleep(150 * time.Millisecond)
 		}
-	}("anony fish goroutine", 3)
+	}("anony fish goroutine", 10)
 
 	// Waits for a button to be pushed.
 	// Try commenting this!

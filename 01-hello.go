@@ -28,6 +28,9 @@ func main() {
 
 	// call the Println method from fmt package, which writes to standard out
 	fmt.Println(phrase)
+
+	var name string = "lunweiwei"
+	fmt.Println("hello " + name)
 }
 
 // To run this go program in your terminal, requires having go installed

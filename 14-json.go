@@ -55,9 +55,20 @@ func main() {
 	fmt.Println(people)
 
 	// encoding a Go object into JSON is simply using the Marshal command
-	json, err := json.Marshal(people)
+	peopleStr, err := json.Marshal(people)
 	if err != nil {
 		fmt.Println("JSON Encoding Error", err)
 	}
-	fmt.Println(string(json))
+	fmt.Println(string(peopleStr))
+
+	var product Person
+	product.Name = "lunweiwei"
+	product.City = "Beijing"
+
+	fmt.Println(product)
+	productStr, err := json.Marshal(product)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(productStr))
 }

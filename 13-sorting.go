@@ -51,6 +51,7 @@ func main() {
 		fmt.Printf("%s => %v\n", k, v)
 	}
 
+	fmt.Println()
 	// to sort, create array of keys and sort array
 	keys := make([]string, 0, len(hash))
 	for k := range hash {

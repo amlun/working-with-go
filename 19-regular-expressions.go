@@ -14,11 +14,11 @@ import (
 func basic_regexes() {
 	// create regular expression pattern
 	// pattern, match 1 or more numbers
-	pattern := "[0-9]+"
-
+	//pattern := "[0-9]+"
+	pattern := "https://"
 	// test string
-	str := "The 12 monkeys ate 48 bananas"
-
+	//str := "The 12 monkeys ate 48 bananas"
+	str := "https://nr-cmt.ksmobile.net"
 	// compile pattern
 	re, err := regexp.Compile(pattern)
 	if err != nil {
@@ -27,14 +27,14 @@ func basic_regexes() {
 
 	// 1. Test compiled pattern matches string
 	if re.MatchString(str) {
-		fmt.Println("Yes, matched a number")
+		fmt.Println("Yes, matched url scheme")
 	} else {
 		fmt.Println("No, no match")
 	}
 
 	// 2. Return first match
 	result_two := re.FindString(str)
-	fmt.Println("Number matched:", result_two)
+	fmt.Println("https matched:", result_two)
 
 	// 3. Return n matches, use -1 to find all matches
 	results_three := re.FindAllString(str, 2)
@@ -43,7 +43,7 @@ func basic_regexes() {
 	}
 
 	// 4. Replace matches
-	results_four := re.ReplaceAllString(str, "xx")
+	results_four := re.ReplaceAllString(str, "http://")
 	fmt.Println("Result:", results_four)
 }
 
@@ -62,6 +62,11 @@ func case_insensitive() {
 	// match string
 	result := re.FindString(str)
 	fmt.Println("Result:", result)
+
+	results := re.FindAllString(str, 4)
+	for i, v := range results {
+		fmt.Printf("Match %d: %s\n", i, v)
+	}
 }
 
 func main() {

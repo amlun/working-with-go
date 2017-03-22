@@ -39,4 +39,28 @@ func main() {
 		fmt.Println("Thrown over boat")
 	}
 
+	weekDay(-1)
+	weekDay(1)
+	weekDay(6)
+	weekDay(18)
+
+}
+
+func weekDay(day int) {
+	switch {
+	case day == 1:
+		fmt.Println("星期一")
+	case day == 2:
+		fmt.Println("星期二")
+	case day == 3:
+		fmt.Println("星期三")
+	case day == 4:
+		fmt.Println("星期四")
+	case day == 5:
+		fmt.Println("星期五")
+	case day > 7 || day < 1:
+		fmt.Println("Error")
+	default:
+		fmt.Println("周末")
+	}
 }

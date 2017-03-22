@@ -66,4 +66,12 @@ func main() {
 	// this example uses Printf to format output, %v can be used for any type
 	fmt.Printf("Quotient: %v, Remainder %v \n", q, r)
 
+	z := add( 3, 4)
+	fmt.Println(z)
+
+	fmt.Println(Say2("lunweiwei"))
+}
+
+func add(x int, y int) int {
+	return x + y
 }

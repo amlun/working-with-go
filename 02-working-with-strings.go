@@ -40,7 +40,7 @@ func main() {
 	fmt.Println("First Five: " + str[:5])
 
 	// split a string on a specific character or word
-	sentence := "I'm a sentence made up of words"
+	sentence := "I'm a sentence made up of words    haha"
 	words := strings.Split(sentence, " ")
 	fmt.Printf("%v \n", words)
 
@@ -49,7 +49,20 @@ func main() {
 	fields := strings.Fields(sentence)
 	fmt.Printf("%v \n", fields)
 
+	// TODO reverse the string
+	word := "this is a word"
+	reword := reverse(word)
+	fmt.Println(reword)
+
 }
 
 // run program in your terminal using
 // $ go run working-with-strings.go
+
+func reverse(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}

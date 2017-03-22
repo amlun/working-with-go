@@ -29,7 +29,7 @@ type Dog struct {
 func main() {
 
 	// connect to memcache server
-	mc := memcache.New("127.0.0.1:11211")
+	mc := memcache.New("10.60.81.83:11211")
 
 	// try to pull from memcache
 	fetchItem, err := mc.Get("dog")

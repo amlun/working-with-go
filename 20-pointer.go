@@ -26,6 +26,6 @@ func main() {
 	// modify field through pointer
 	SpotPointer.Color = "black"
 
-	fmt.Println(Spot.Color)
+	fmt.Println(Spot, SpotPointer)
 
 }

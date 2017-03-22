@@ -49,7 +49,7 @@ func main() {
 	defer f.Close()
 
 	for _, str := range []string{"apple", "banana", "carrot"} {
-		bytes, err := f.WriteString(str)
+		bytes, err := f.WriteString(str + "\n")
 		if err != nil {
 			log.Fatalln("Error writing string: ", err)
 		}
